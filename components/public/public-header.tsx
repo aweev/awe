@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -280,7 +280,7 @@ export function PublicHeader() {
                       className="py-6 space-y-2"
                       variants={mobileItemVariants}
                     >
-                      {navLinks.map((link, index) => (
+                      {navLinks.map((link) => (
                         <motion.div
                           key={link.href}
                           variants={mobileItemVariants}

@@ -134,7 +134,7 @@ export async function PUT(request: NextRequest) {
     };
 
     // Upsert the configuration
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("brand_config")
       .upsert(dbFormat, { onConflict: "id" })
       .select()
@@ -160,7 +160,7 @@ export async function PUT(request: NextRequest) {
 }
 
 // DELETE /api/brand-config - Reset to default configuration (Admin only)
-export async function DELETE(request: NextRequest) {
+export async function DELETE() {
   try {
     const supabase = await createServerClient();
 

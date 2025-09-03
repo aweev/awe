@@ -37,15 +37,17 @@ export interface BrandConfig {
 export const defaultBrandConfig: BrandConfig = {
   name: "AWE e.V.",
   shortName: "AWE",
-  tagline: "Empowering communities through sustainable development and education",
-  description: "AWE e.V. is dedicated to creating positive change through community-driven initiatives, sustainable development projects, and educational programs that empower individuals and strengthen communities across the globe.",
+  tagline:
+    "Empowering communities through sustainable development and education",
+  description:
+    "AWE e.V. is dedicated to creating positive change through community-driven initiatives, sustainable development projects, and educational programs that empower individuals and strengthen communities across the globe.",
   logo: {
     icon: "HeartHandshake", // Lucide icon name
-    alt: "AWE e.V. Logo"
+    alt: "AWE e.V. Logo",
   },
   colors: {
     primary: "#D95D39", // hopeful-clay
-    secondary: "#1D2129", // deep-charcoal  
+    secondary: "#1D2129", // deep-charcoal
     accent: "#F0A202", // radiant-gold
   },
   social: {
@@ -56,8 +58,8 @@ export const defaultBrandConfig: BrandConfig = {
   contact: {
     email: "info@awe-ev.org",
     phone: "+49 (0) 123 456789",
-    address: "Berlin, Germany"
-  }
+    address: "Berlin, Germany",
+  },
 };
 
 /**
@@ -68,7 +70,7 @@ export async function getBrandConfig(): Promise<BrandConfig> {
   // In production, this would be:
   // const response = await fetch('/api/admin/brand-config');
   // return response.json();
-  
+
   return defaultBrandConfig;
 }
 
@@ -76,7 +78,9 @@ export async function getBrandConfig(): Promise<BrandConfig> {
  * Update brand configuration (admin function)
  * This would be called from your admin panel
  */
-export async function updateBrandConfig(config: Partial<BrandConfig>): Promise<BrandConfig> {
+export async function updateBrandConfig(
+  config: Partial<BrandConfig>
+): Promise<BrandConfig> {
   // In production, this would be:
   // const response = await fetch('/api/admin/brand-config', {
   //   method: 'PUT',
@@ -84,15 +88,15 @@ export async function updateBrandConfig(config: Partial<BrandConfig>): Promise<B
   //   body: JSON.stringify(config)
   // });
   // return response.json();
-  
-  console.log('Brand config would be updated:', config);
+
+  console.log("Brand config would be updated:", config);
   return { ...defaultBrandConfig, ...config };
 }
 
 /**
  * Utility function to get brand name for components
  */
-export function getBrandName(locale?: string): string {
+export function getBrandName(): string {
   // In a real app, you might have different names per locale
   return defaultBrandConfig.name;
 }

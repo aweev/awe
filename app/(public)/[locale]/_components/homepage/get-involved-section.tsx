@@ -65,7 +65,7 @@ const InvolvementCard: React.FC<{
   isHovered: boolean;
   onHover: (index: number | null) => void;
   locale: string;
-}> = ({ option, index, isHovered, onHover, locale }) => {
+}> = ({ option, index, isHovered, onHover }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -517,9 +517,9 @@ export function GetInvolvedSection({
               </h3>
 
               <p className="text-body-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                Join a movement that's transforming lives across the globe. Your
-                involvement, no matter how big or small, contributes to real,
-                measurable impact.
+                Join a movement that&apos;s transforming lives across the globe.
+                Your involvement, no matter how big or small, contributes to
+                real, measurable impact.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-6">

@@ -3,7 +3,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 import { SuccessStory } from "@/types/homepage";
 import { staggeredContainer, dignifiedReveal } from "@/lib/animations";

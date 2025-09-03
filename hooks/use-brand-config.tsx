@@ -167,7 +167,7 @@ export function useBrandConfig() {
 }
 
 // Convenience hooks for specific brand properties
-export function useBrandName(locale?: string) {
+export function useBrandName() {
   const { config } = useBrandConfig();
   // In a real app, you might have different names per locale
   return config.name;
