@@ -1,0 +1,177 @@
+{
+  "PublicHeader": {
+    "brandName": "AWE e.V.",
+    "nav": {
+      "about": "À propos",
+      "ourWork": "Notre travail",
+      "impact": "Impact",
+      "openMenu": "Ouvrir le menu principal",
+      "mobileTitle": "Menu principal"
+    },
+    "cta": {
+      "volunteer": "Bénévolat",
+      "donate": "Faire un don"
+    },
+    "mobileMenu": {
+      "open": "Ouvrir le menu principal",
+      "toggle": "Basculer le menu de navigation"
+    },
+    "languageSwitcher": {
+      "change": "Changer de langue"
+    }
+  },
+  "PublicFooter": {
+  "brandName": "AWE e.V.",
+  "tagline": "Transformer les cycles de pauvreté et de déplacement en voies vers la dignité, l'autonomie et la prospérité durable.",
+  "followUs": "Suivez-nous:",
+  "sections": {
+    "about": {
+      "title": "À propos",
+      "story": "Notre Histoire",
+      "team": "Notre Équipe",
+      "approach": "Notre Approche"
+    },
+    "getInvolved": {
+      "title": "S'impliquer",
+      "donate": "Faire un don",
+      "volunteer": "Bénévolat",
+      "partner": "Partenaire"
+    },
+    "legal": {
+      "title": "Légal",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "contact": "Contact"
+    }
+  },
+  "rightsReserved": "Tous droits réservés.",
+  "motto": "Faire la différence, une communauté à la fois"
+},
+  "MembersHeader": {
+    "toggleNavigation": "Basculer le menu de navigation",
+    "toggleUserMenu": "Basculer le menu utilisateur", 
+    "searchPlaceholder": "Rechercher des ressources...",
+    "myAccount": "Mon compte",
+    "settings": "Paramètres",
+    "support": "Support",
+    "logout": "Déconnexion"
+  },
+  "MembersSidebar": {
+    "brandName": "AWE Portal",
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "myImpact": "Mon impact", 
+      "resources": "Ressources",
+      "community": "Communauté"
+    }
+  },
+  "AdminHeader": {
+    "toggleNavigation": "Basculer le menu de navigation",
+    "toggleUserMenu": "Basculer le menu utilisateur",
+    "adminAccount": "Compte Admin",
+    "settings": "Paramètres",
+    "support": "Support",
+    "logout": "Déconnexion"
+  },
+  "AdminSidebar": {
+    "brandName": "AWE Admin", 
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "contentManagement": "Gestion de contenu",
+      "userManagement": "Gestion des utilisateurs",
+      "partnerships": "Partenariats",
+      "analytics": "Analytiques"
+    },
+    "settings": "Paramètres"
+  },
+  "HomePage": {
+    "sectionTitles": {
+      "impact": "Notre impact prouvé",
+      "differentiators": "Notre approche unique",
+      "stories": "Histoires de changement",
+      "storiesSubtitle": "Découvrez l'impact réel de notre approche holistique à travers les vies que nous touchons.",
+      "involvement": "Comment vous pouvez aider",
+      "newsletter": "Restez connecté"
+    },
+    "hero": {
+      "headlinePrimary": "Construire l''avenir",
+    "headlineAccent": "pas seulement fournir de l''aide",
+      "subheadline": "Nous autonomisons les femmes, les jeunes et les enfants — en particulier les réfugiés et les communautés déplacées — grâce à la formation, à l'éducation et à un soutien holistique qui crée un changement digne et durable.",
+      "trustIndicator1": "ONG certifiée",
+      "trustIndicator2": "Programmes primés",
+      "primaryCta": "Faire un don",
+      "secondaryCta": "Devenir partenaire"
+    },
+    "impact": {
+      "stat1": {
+        "label": "Personnes autonomisées",
+        "outcome": "grâce à la formation et au soutien"
+      },
+      "stat2": {
+        "label": "Nouvelles entreprises créées",
+        "outcome": "favorisant l'indépendance économique"
+      },
+      "stat3": {
+        "label": "Projets communautaires lancés",
+        "outcome": "répondant directement aux besoins locaux"
+      },
+      "stat4": {
+        "label": "Taux de réussite du programme",
+        "outcome": "démontrant un succès à long terme"
+      }
+    },
+    "differentiators": {
+      "item1": {
+        "title": "Dirigé par la communauté",
+        "description": "Nos solutions sont co-conçues avec les membres de la communauté pour garantir leur pertinence et leur appropriation à long terme."
+      },
+      "item2": {
+        "title": "Soutien holistique",
+        "description": "Nous répondons à des besoins interconnectés, de l'éducation et la santé à l'autonomisation économique."
+      },
+      "item3": {
+        "title": "Résultats prouvés",
+        "description": "Nos méthodes sont basées sur des données et continuellement affinées pour un impact maximal et mesurable."
+      },
+      "item4": {
+        "title": "Compétence culturelle",
+        "description": "Nous opérons avec un profond respect et une compréhension des cultures locales, instaurant la confiance et des partenariats efficaces."
+      }
+    },
+    "involvement": {
+      "option1": {
+        "title": "Faire un don",
+        "description": "Votre contribution finance directement nos programmes, fournissant des ressources et des formations essentielles.",
+        "cta": "Donner aujourd'hui"
+      },
+      "option2": {
+        "title": "Devenir partenaire",
+        "description": "Collaborez avec nous pour étendre notre impact et créer un changement systémique et durable.",
+        "cta": "Devenir partenaire"
+      },
+      "option3": {
+        "title": "Bénévolat",
+        "description": "Mettez vos compétences et votre temps au service d'une différence tangible dans la vie de nos participants.",
+        "cta": "Rejoignez notre équipe"
+      }
+    },
+    "stories": {
+      "readStory": "Lire l'histoire",
+      "viewAll": "Voir toutes les histoires"
+    },
+    "newsletter": {
+      "subtitle": "Rejoignez notre communauté et recevez des actualités sur notre impact et nos histoires de changement.",
+      "placeholder": "Entrez votre email",
+      "subscribe": "S'abonner"
+    }
+  },
+  "NotFound": {
+    "title": "Page non trouvée",
+    "description": "Désolé, nous n'avons pas trouvé la page que vous recherchez.",
+    "homeButton": "Retour à l'accueil"
+  },
+  "Metadata": {
+    "title": "AWE e.V. | Construire l'avenir",
+    "description": "Transformer les cycles de pauvreté et de déplacement en voies vers la dignité, l'autonomie et une prospérité durable."
+  }
+}

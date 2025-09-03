@@ -1,0 +1,220 @@
+{
+  "PublicHeader": {
+    "brandName": "AWE e.V.",
+    "nav": {
+      "about": "About Us",
+      "ourWork": "Our Work",
+      "impact": "Impact",
+      "openMenu": "Open main menu",
+      "mobileTitle": "Main Menu"
+    },
+    "cta": {
+      "volunteer": "Volunteer",
+      "donate": "Donate"
+    },
+    "mobileMenu": {
+      "open": "Open main menu",
+      "toggle": "Toggle navigation menu"
+    }
+  },
+  "LanguageSwitcher": {
+    "changeLanguage": "Change language",
+    "currentLanguage": "Current language",
+    "selectLanguage": "Select language"
+  },
+  "ThemeToggle": {
+    "toggleTheme": "Toggle theme",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "systemMode": "System mode"
+  },
+  "PublicFooter": {
+    "brandName": "AWE e.V.",
+    "tagline": "Transforming cycles of poverty and displacement into pathways of dignity, self-reliance, and lasting prosperity.",
+    "followUs": "Follow us:",
+    "sections": {
+      "about": {
+        "title": "About",
+        "story": "Our Story",
+        "team": "Our Team",
+        "approach": "Our Approach"
+      },
+      "getInvolved": {
+        "title": "Get Involved",
+        "donate": "Donate",
+        "volunteer": "Volunteer",
+        "partner": "Partner with Us"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "contact": "Contact"
+      }
+    },
+    "rightsReserved": "All rights reserved.",
+    "motto": "Making a difference, one community at a time"
+  },
+  "MembersHeader": {
+    "toggleNavigation": "Toggle navigation menu",
+    "toggleUserMenu": "Toggle user menu",
+    "searchPlaceholder": "Search resources...",
+    "myAccount": "My Account",
+    "settings": "Settings",
+    "support": "Support",
+    "logout": "Logout"
+  },
+  "MembersSidebar": {
+    "brandName": "AWE Portal",
+    "nav": {
+      "dashboard": "Dashboard",
+      "myImpact": "My Impact",
+      "resources": "Resources",
+      "community": "Community"
+    }
+  },
+  "AdminHeader": {
+    "toggleNavigation": "Toggle navigation menu",
+    "toggleUserMenu": "Toggle user menu",
+    "adminAccount": "Admin Account",
+    "settings": "Settings",
+    "support": "Support",
+    "logout": "Logout"
+  },
+  "AdminSidebar": {
+    "brandName": "AWE Admin",
+    "nav": {
+      "dashboard": "Dashboard",
+      "contentManagement": "Content Management",
+      "userManagement": "User Management",
+      "partnerships": "Partnerships",
+      "analytics": "Analytics"
+    },
+    "settings": "Settings"
+  },
+  "HomePage": {
+    "sectionTitles": {
+      "impact": "Our Proven Impact",
+      "differentiators": "Our Unique Approach",
+      "stories": "Stories of Change",
+      "storiesSubtitle": "See the real-world impact of our holistic approach through the lives we touch.",
+      "involvement": "How You Can Help",
+      "newsletter": "Stay Connected"
+    },
+    "hero": {
+      "headlinePrimary": "Building Futures",
+      "headlineAccent": "Not Just Providing Aid",
+      "subheadline": "We empower women, youth, and children—especially refugees and displaced communities—through skills training, education, and holistic support that creates lasting, dignified change.",
+      "trustIndicator1": "Certified NGO",
+      "trustIndicator2": "Award-Winning Programs",
+      "primaryCta": "Donate Now",
+      "secondaryCta": "Partner With Us",
+      "testimonials": {
+        "en": [
+          {
+            "text": "AWE transformed our entire community",
+            "author": "Maria Santos",
+            "location": "Kenya",
+            "program": "Women's Empowerment"
+          },
+          {
+            "text": "Hope restored in our village",
+            "author": "John Kamau",
+            "location": "Uganda",
+            "program": "Youth Leadership"
+          },
+          {
+            "text": "Education changed everything",
+            "author": "Fatima Al-Rashid",
+            "location": "Jordan",
+            "program": "Child Education"
+          }
+        ]
+      }
+    },
+    "impact": {
+      "title": "Our Proven Impact",
+      "subtitle": "Our data-driven approach ensures measurable, lasting impact in the communities we serve. Every number represents real lives transformed and futures reimagined.",
+      "ctaSection": {
+        "title": "Every Number Tells a Story",
+        "description": "Behind each statistic is a person whose life has been transformed through our holistic approach. Join us in creating more success stories and building stronger communities together.",
+        "primaryCta": "Be Part of Our Impact",
+        "secondaryCta": "View Detailed Reports"
+      },
+      "stat1": {
+        "label": "Individuals Empowered",
+        "outcome": "through skills training and support"
+      },
+      "stat2": {
+        "label": "New Businesses Started",
+        "outcome": "fostering economic independence"
+      },
+      "stat3": {
+        "label": "Community Projects Launched",
+        "outcome": "addressing local needs directly"
+      },
+      "stat4": {
+        "label": "Program Graduation Rate",
+        "outcome": "demonstrating long-term success"
+      }
+    },
+    "differentiators": {
+      "item1": {
+        "title": "Community-Led",
+        "description": "Our solutions are co-designed with community members to ensure relevance and long-term ownership."
+      },
+      "item2": {
+        "title": "Holistic Support",
+        "description": "We address interconnected needs, from education and health to economic empowerment."
+      },
+      "item3": {
+        "title": "Proven Results",
+        "description": "Our methods are data-driven and continuously refined for maximum, measurable impact."
+      },
+      "item4": {
+        "title": "Cultural Competency",
+        "description": "We operate with deep respect and understanding for local cultures, building trust and effective partnerships."
+      }
+    },
+    "involvement": {
+      "option1": {
+        "title": "Donate",
+        "description": "Your contribution directly funds our programs, providing essential resources and training.",
+        "cta": "Give Today"
+      },
+      "option2": {
+        "title": "Partner",
+        "description": "Collaborate with us to scale our impact and create sustainable, systemic change.",
+        "cta": "Become a Partner"
+      },
+      "option3": {
+        "title": "Volunteer",
+        "description": "Lend your skills and time to make a tangible difference in the lives of our participants.",
+        "cta": "Join Our Team"
+      }
+    },
+    "stories": {
+      "readStory": "Read Story",
+      "viewAll": "View All Stories of Change"
+    },
+    "newsletter": {
+      "subtitle": "Join our community and receive updates on our impact and stories of change.",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    }
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, we couldn't find the page you're looking for.",
+    "homeButton": "Go Back Home"
+  },
+  "Metadata": {
+    "title": "AWE e.V. | Building Futures",
+    "description": "Transforming cycles of poverty and displacement into pathways of dignity, self-reliance, and lasting prosperity."
+  },
+  "BrandConfig": {
+    "loadingBrand": "Loading brand configuration...",
+    "errorLoading": "Error loading brand configuration",
+    "retry": "Retry"
+  }
+}

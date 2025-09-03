@@ -1,0 +1,177 @@
+{
+  "PublicHeader": {
+    "brandName": "AWE e.V.",
+    "nav": {
+      "about": "Über uns",
+      "ourWork": "Unsere Arbeit",
+      "impact": "Wirkung",
+      "openMenu": "Hauptmenü öffnen",
+      "mobileTitle": "Hauptmenü"
+    },
+    "cta": {
+      "volunteer": "Engagieren",
+      "donate": "Spenden"
+    },
+    "mobileMenu": {
+      "open": "Hauptmenü öffnen",
+      "toggle": "Navigationsmenü umschalten"
+    },
+    "languageSwitcher": {
+      "change": "Sprache ändern"
+    }
+  },
+  "PublicFooter": {
+  "brandName": "AWE e.V.",
+  "tagline": "Armutskreisläufe und Vertreibung in Wege zu Würde, Eigenständigkeit und nachhaltigem Wohlstand verwandeln.",
+  "followUs": "Folgen Sie uns:",
+  "sections": {
+    "about": {
+      "title": "Über uns",
+      "story": "Unsere Geschichte",
+      "team": "Unser Team",
+      "approach": "Unser Ansatz"
+    },
+    "getInvolved": {
+      "title": "Mitmachen",
+      "donate": "Spenden",
+      "volunteer": "Ehrenamt",
+      "partner": "Partner werden"
+    },
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen", 
+      "contact": "Kontakt"
+    }
+  },
+  "rightsReserved": "Alle Rechte vorbehalten.",
+  "motto": "Einen Unterschied machen, eine Gemeinschaft nach der anderen"
+},
+  "MembersHeader": {
+    "toggleNavigation": "Navigationsmenü umschalten",
+    "toggleUserMenu": "Benutzermenü umschalten",
+    "searchPlaceholder": "Ressourcen suchen...",
+    "myAccount": "Mein Konto",
+    "settings": "Einstellungen", 
+    "support": "Support",
+    "logout": "Abmelden"
+  },
+  "MembersSidebar": {
+    "brandName": "AWE Portal",
+    "nav": {
+      "dashboard": "Dashboard", 
+      "myImpact": "Meine Wirkung",
+      "resources": "Ressourcen",
+      "community": "Gemeinschaft"
+    }
+  },
+  "AdminHeader": {
+    "toggleNavigation": "Navigationsmenü umschalten",
+    "toggleUserMenu": "Benutzermenü umschalten",
+    "adminAccount": "Admin-Konto",
+    "settings": "Einstellungen",
+    "support": "Support", 
+    "logout": "Abmelden"
+  },
+  "AdminSidebar": {
+    "brandName": "AWE Admin",
+    "nav": {
+      "dashboard": "Dashboard",
+      "contentManagement": "Content-Verwaltung",
+      "userManagement": "Benutzerverwaltung", 
+      "partnerships": "Partnerschaften",
+      "analytics": "Analytik"
+    },
+    "settings": "Einstellungen"
+  },
+  "HomePage": {
+    "sectionTitles": {
+      "impact": "Unsere nachgewiesene Wirkung",
+      "differentiators": "Unser einzigartiger Ansatz",
+      "stories": "Geschichten der Veränderung",
+      "storiesSubtitle": "Erleben Sie die reale Wirkung unseres ganzheitlichen Ansatzes durch die Leben, die wir berühren.",
+      "involvement": "Wie Sie helfen können",
+      "newsletter": "Bleiben Sie auf dem Laufenden"
+    },
+    "hero": {
+      "headlinePrimary": "Zukunft gestalten",
+    "headlineAccent": "statt nur Hilfe zu leisten",
+      "subheadline": "Wir befähigen Frauen, Jugendliche und Kinder — insbesondere Geflüchtete und Vertriebene — durch Kompetenztraining, Bildung und ganzheitliche Unterstützung, die einen dauerhaften, würdevollen Wandel schaffen.",
+      "trustIndicator1": "Zertifizierte NGO",
+      "trustIndicator2": "Preisgekrönte Programme",
+      "primaryCta": "Jetzt spenden",
+      "secondaryCta": "Partner werden"
+    },
+    "impact": {
+      "stat1": {
+        "label": "Menschen gestärkt",
+        "outcome": "durch Schulungen und Unterstützung"
+      },
+      "stat2": {
+        "label": "Neue Unternehmen gegründet",
+        "outcome": "zur Förderung der wirtschaftlichen Unabhängigkeit"
+      },
+      "stat3": {
+        "label": "Gemeinschaftsprojekte gestartet",
+        "outcome": "um lokale Bedürfnisse direkt anzugehen"
+      },
+      "stat4": {
+        "label": "Programm-Abschlussquote",
+        "outcome": "als Beweis für langfristigen Erfolg"
+      }
+    },
+    "differentiators": {
+      "item1": {
+        "title": "Von der Gemeinschaft geführt",
+        "description": "Unsere Lösungen werden gemeinsam mit den Mitgliedern der Gemeinschaft entwickelt, um Relevanz und langfristige Eigenverantwortung zu gewährleisten."
+      },
+      "item2": {
+        "title": "Ganzheitliche Unterstützung",
+        "description": "Wir gehen auf vernetzte Bedürfnisse ein, von Bildung und Gesundheit bis hin zur wirtschaftlichen Stärkung."
+      },
+      "item3": {
+        "title": "Nachgewiesene Ergebnisse",
+        "description": "Unsere Methoden sind datengestützt und werden kontinuierlich für maximale, messbare Wirkung verfeinert."
+      },
+      "item4": {
+        "title": "Kulturelle Kompetenz",
+        "description": "Wir handeln mit tiefem Respekt und Verständnis für lokale Kulturen und bauen so Vertrauen und effektive Partnerschaften auf."
+      }
+    },
+    "involvement": {
+      "option1": {
+        "title": "Spenden",
+        "description": "Ihr Beitrag finanziert direkt unsere Programme und stellt wesentliche Ressourcen und Schulungen bereit.",
+        "cta": "Heute spenden"
+      },
+      "option2": {
+        "title": "Partner werden",
+        "description": "Arbeiten Sie mit uns zusammen, um unsere Wirkung zu skalieren und nachhaltige, systemische Veränderungen zu schaffen.",
+        "cta": "Partner werden"
+      },
+      "option3": {
+        "title": "Ehrenamtlich",
+        "description": "Bringen Sie Ihre Fähigkeiten und Ihre Zeit ein, um das Leben unserer Teilnehmer spürbar zu verbessern.",
+        "cta": "Werden Sie Teil des Teams"
+      }
+    },
+    "stories": {
+      "readStory": "Geschichte lesen",
+      "viewAll": "Alle Geschichten ansehen"
+    },
+    "newsletter": {
+      "subtitle": "Werden Sie Teil unserer Community und erhalten Sie Updates über unsere Arbeit und Erfolgsgeschichten.",
+      "placeholder": "Ihre E-Mail-Adresse",
+      "subscribe": "Abonnieren"
+    }
+  },
+  "NotFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, wir konnten die gesuchte Seite nicht finden.",
+    "homeButton": "Zur Startseite"
+  },
+  "Metadata": {
+    "title": "AWE e.V. | Zukunft gestalten",
+    "description": "Wir verwandeln Teufelskreise von Armut und Vertreibung in Wege zu Würde, Eigenständigkeit und dauerhaftem Wohlstand."
+  }
+}
