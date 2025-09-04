@@ -3,33 +3,36 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/supabase/server";
 import { BrandConfig } from "@/lib/config/brand";
 
+async function withTimeout<T>(promise: PromiseLike<T>, ms = 5000): Promise<T> {
+  return Promise.race([
+    Promise.resolve(promise), // ensures thenables are handled as Promises
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error("⏱ Supabase request timed out")), ms)
+    ),
+  ]);
+}
+
 // GET /api/brand-config - Fetch current brand configuration
 export async function GET() {
   try {
     const supabase = await createServerClient();
 
-    // Fetch brand config from Supabase
-    const { data, error } = await supabase
-      .from("brand_config")
-      .select("*")
-      .single();
+    const { data, error } = await withTimeout(
+      supabase.from("brand_config").select("*").single(),
+      5000 // 5s max
+    );
 
-    if (error && error.code !== "PGRST116") {
-      // PGRST116 is "no rows returned"
-      console.error("Error fetching brand config:", error);
-      return NextResponse.json(
-        { error: "Failed to fetch brand configuration" },
-        { status: 500 }
-      );
+    if (error) {
+      console.error("❌ Supabase error:", error.message);
+      const { defaultBrandConfig } = await import("@/lib/config/brand");
+      return NextResponse.json(defaultBrandConfig);
     }
 
-    // If no config exists, return default
     if (!data) {
       const { defaultBrandConfig } = await import("@/lib/config/brand");
       return NextResponse.json(defaultBrandConfig);
     }
 
-    // Transform database format to BrandConfig format
     const brandConfig: BrandConfig = {
       name: data.name,
       shortName: data.short_name,
@@ -60,11 +63,9 @@ export async function GET() {
 
     return NextResponse.json(brandConfig);
   } catch (error) {
-    console.error("Unexpected error fetching brand config:", error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    console.error("❌ API fallback due to error:", error);
+    const { defaultBrandConfig } = await import("@/lib/config/brand");
+    return NextResponse.json(defaultBrandConfig);
   }
 }
 

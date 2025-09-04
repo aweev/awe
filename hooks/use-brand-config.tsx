@@ -83,20 +83,20 @@ export function BrandConfigProvider({
       setIsLoading(true);
       setError(null);
 
-      // In production, this would fetch from your Supabase backend
-      const response = await fetch("/api/brand-config");
+      const response = await fetch("/api/brand-config", { cache: "no-store" });
 
       if (!response.ok) {
-        throw new Error("Failed to fetch brand configuration");
+        console.warn("⚠️ API returned non-OK, using default brand config");
+        setConfig(defaultBrandConfig);
+        return;
       }
 
       const data = await response.json();
       setConfig(data);
     } catch (err) {
-      console.error("Error fetching brand config:", err);
+      console.error("❌ Error fetching brand config:", err);
       setError(err instanceof Error ? err.message : "Unknown error");
-      // Fall back to default config
-      setConfig(defaultBrandConfig);
+      setConfig(defaultBrandConfig); // ✅ always fallback
     } finally {
       setIsLoading(false);
     }

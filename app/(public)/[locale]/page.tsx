@@ -30,38 +30,55 @@ interface SupabaseHomepageContent {
   }>;
 }
 
-export default async function HomePage({ params }: { params: { locale: string } }) {
-  const { locale } = await params;
-
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params; // ✅ Next.js 15 requires awaiting params
   console.log("🌐 [HomePage] Current locale:", locale);
 
   const t = await getTranslations("HomePage");
   const supabase = await createServerClient();
 
-  const [contentResult, storiesResult] = await Promise.all([
-    supabase.from("homepage_content").select("*").single<SupabaseHomepageContent>(),
-    supabase
-      .from("success_stories")
-      .select("*, profile:profiles(full_name, avatar_url)")
-      .eq("is_featured", true)
-      .limit(3),
-  ]);
+  // ✅ Fixed Supabase queries
+  const { data: rawContent, error: contentError } = await supabase
+    .from("homepage_content")
+    .select("*")
+    .single();
 
-  const { data: rawContent, error: contentError } = contentResult;
+  const { data: rawStories, error: storiesError } = await supabase
+    .from("success_stories")
+    .select("*, profile:profiles(full_name, avatar_url)")
+    .eq("is_featured", true)
+    .limit(3);
 
   if (contentError && contentError.code !== "PGRST116") {
-    console.error("Supabase error fetching homepage content:", contentError.message);
+    console.error(
+      "❌ Supabase error fetching homepage content:",
+      contentError.message
+    );
   }
 
-  const getLocalized = <T,>(data: LocalizedContent<T> | undefined, fallback: T): T => {
+  if (storiesError) {
+    console.error(
+      "❌ Supabase error fetching success stories:",
+      storiesError.message
+    );
+  }
+
+  // Cast Supabase content safely
+  const content = rawContent as SupabaseHomepageContent | null;
+
+  // Localizer helper
+  const getLocalized = <T,>(
+    data: LocalizedContent<T> | undefined,
+    fallback: T
+  ): T => {
     return data?.[locale] || data?.["en"] || fallback;
   };
 
-  const { data: rawStories, error: storiesError } = storiesResult;
-  if (storiesError) {
-    console.error("Supabase error fetching success stories:", storiesError.message);
-  }
-
+  // Build success stories with fallbacks
   const successStories: SuccessStory[] = (rawStories || []).map((story) => ({
     id: story.id,
     slug: story.slug,
@@ -71,27 +88,42 @@ export default async function HomePage({ params }: { params: { locale: string } 
     quote: story.quote?.[locale] || story.quote?.["en"] || "",
   }));
 
-  const heroContent = getLocalized(rawContent?.hero_content, {
-  headlinePrimary: t("hero.headlinePrimary"), 
-  headlineAccent: t("hero.headlineAccent"), 
-  subheadline: t("hero.subheadline"),
-  primaryCta: t("hero.primaryCta"),
-  secondaryCta: t("hero.secondaryCta"),
-  trustIndicators: [
-    { icon: "trust" as const, text: t("hero.trustIndicator1") },
-    { icon: "award" as const, text: t("hero.trustIndicator2") },
-  ],
-});
-
+  // Prepare props for client component
   const props: HomePageClientProps = {
-    heroContent,
-    impactStats: getLocalized(rawContent?.impact_stats, [
-      { value: "500+", label: t("impact.stat1.label"), outcome: t("impact.stat1.outcome") },
-      { value: "300+", label: t("impact.stat2.label"), outcome: t("impact.stat2.outcome") },
-      { value: "5", label: t("impact.stat3.label"), outcome: t("impact.stat3.outcome") },
-      { value: "85%", label: t("impact.stat4.label"), outcome: t("impact.stat4.outcome") },
+    heroContent: getLocalized(content?.hero_content, {
+      headlinePrimary: t("hero.headlinePrimary"),
+      headlineAccent: t("hero.headlineAccent"),
+      subheadline: t("hero.subheadline"),
+      primaryCta: t("hero.primaryCta"),
+      secondaryCta: t("hero.secondaryCta"),
+      trustIndicators: [
+        { icon: "trust" as const, text: t("hero.trustIndicator1") },
+        { icon: "award" as const, text: t("hero.trustIndicator2") },
+      ],
+    }),
+    impactStats: getLocalized(content?.impact_stats, [
+      {
+        value: "500+",
+        label: t("impact.stat1.label"),
+        outcome: t("impact.stat1.outcome"),
+      },
+      {
+        value: "300+",
+        label: t("impact.stat2.label"),
+        outcome: t("impact.stat2.outcome"),
+      },
+      {
+        value: "5",
+        label: t("impact.stat3.label"),
+        outcome: t("impact.stat3.outcome"),
+      },
+      {
+        value: "85%",
+        label: t("impact.stat4.label"),
+        outcome: t("impact.stat4.outcome"),
+      },
     ]),
-    differentiators: getLocalized(rawContent?.differentiators, [
+    differentiators: getLocalized(content?.differentiators, [
       {
         icon: "community",
         title: t("differentiators.item1.title"),
@@ -113,7 +145,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
         description: t("differentiators.item4.description"),
       },
     ]),
-    involvementOptions: getLocalized(rawContent?.involvement_options, [
+    involvementOptions: getLocalized(content?.involvement_options, [
       {
         title: t("involvement.option1.title"),
         description: t("involvement.option1.description"),
@@ -134,7 +166,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
       },
     ]),
     successStories,
-    sectionTitles: getLocalized(rawContent?.section_titles, {
+    sectionTitles: getLocalized(content?.section_titles, {
       impact: t("sectionTitles.impact"),
       differentiators: t("sectionTitles.differentiators"),
       stories: t("sectionTitles.stories"),
