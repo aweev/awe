@@ -51,6 +51,7 @@ export interface InvolvementOption {
   description: string;
   cta: string;
   link: string;
+  icon?: IconName;
 }
 
 // --- Data structures for relational content ---
