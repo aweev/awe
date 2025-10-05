@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine # Pin the version for stability
+    container_name: awe_postgres
+    environment:
+      POSTGRES_USER: aweuser
+      POSTGRES_PASSWORD: awepassword
+      POSTGRES_DB: awedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - awe_postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  awe_postgres_data:

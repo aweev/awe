@@ -1,0 +1,33 @@
+# Go build files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+bin/
+pkg/
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Next.js build files
+.next/
+out/
+
+# IDE & OS files
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+
+# Environment variables - VERY IMPORTANT
+.env
+.env*.local
+
+# Logs
+*.log
