@@ -1,0 +1,86 @@
+# This name will appear in the "Actions" tab of your GitHub repository.
+name: Go CI Pipeline
+
+# This section defines when the workflow will run.
+on:
+  # Run on pushes to the 'main' branch.
+  push:
+    branches: [ "main" ]
+  # Run on pull requests that target the 'main' branch.
+  pull_request:
+    branches: [ "main" ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
+jobs:
+  # The 'test-and-lint' job performs all our quality checks.
+  test-and-lint:
+    # The type of runner that the job will run on. 'ubuntu-latest' is the standard.
+    runs-on: ubuntu-latest
+
+    # Services to spin up as Docker containers for the job.
+    # This is how we provide a database for our integration tests.
+    services:
+      postgres:
+        image: postgres:15-alpine
+        # Environment variables for the postgres service container.
+        env:
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpassword
+          POSTGRES_DB: testdb
+        # Map port 5432 of the service container to port 5432 of the runner.
+        # This makes the DB accessible at localhost:5432 from the test code.
+        ports:
+          - 5432:5432
+        # Health check to ensure tests don't start until the database is ready.
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    # 'steps' represent a sequence of tasks that will be executed as part of the job.
+    steps:
+      # Step 1: Check out your repository code so the workflow can access it.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the Go environment.
+      # It automatically reads the required Go version from your `go.mod` file.
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: 'go.mod'
+          # Enable caching of Go modules to speed up subsequent runs.
+          cache: true
+
+      # Step 3: Run the linter to check for code style and quality issues.
+      - name: Run linter (golangci-lint)
+        uses: golangci/golangci-lint-action@v6
+        with:
+          # Optional: version of golangci-lint to use in form of v1.2.3, v1.2, or `latest` to use the latest version
+          version: v1.58
+
+      # Step 4: Run the full test suite.
+      # This includes both unit tests and integration tests.
+      - name: Run Tests
+        # We must set the environment variables for the test helper to connect to the DB service.
+        # In GitHub Actions, the service is accessible at `localhost` on the specified port.
+        env:
+          AWE_DATABASE_HOST: localhost
+          AWE_DATABASE_PORT: 5432
+          AWE_DATABASE_USER: testuser
+          AWE_DATABASE_PASSWORD: testpassword
+          AWE_DATABASE_NAME: testdb
+          AWE_DATABASE_SSLMODE: disable
+        run: go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
+
+      # Step 5: (Optional but recommended) Upload test coverage report
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # You need to set this secret in your GitHub repo settings
+          slug: ${{ github.repository }}
+
+      # Step 6: Verify that the application builds correctly.
+      - name: Build application
+        run: go build -v ./...
