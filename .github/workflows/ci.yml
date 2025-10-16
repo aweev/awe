@@ -1,0 +1,63 @@
+# This is the name of our GitHub Actions workflow.
+# It will be displayed in the "Actions" tab of your GitHub repository.
+name: AWE Backend CI
+
+# This section defines when the workflow will run.
+on:
+  # Run on pushes to the 'main' branch.
+  push:
+    branches: [ main ]
+  # Run on pull requests targeting the 'main' branch.
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
+jobs:
+  # We'll define a single job called "test-and-build" for our backend checks.
+  test-and-build:
+    # The type of runner that the job will run on. We'll use the latest Ubuntu.
+    runs-on: ubuntu-latest
+
+    # The working-directory defaults all subsequent steps to run inside the 'server' folder.
+    defaults:
+      run:
+        working-directory: ./server
+
+    # Steps represent a sequence of tasks that will be executed as part of the job.
+    steps:
+      # Step 1: Check out our repository code so the workflow can access it.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the Go programming environment.
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21' # Use the same version as your project
+
+      # Step 3: Verify Go module integrity.
+      # This command checks that the dependencies in go.mod match go.sum.
+      - name: Verify Dependencies
+        run: go mod verify
+
+      # Step 4: Run the linter to check for stylistic issues and common mistakes.
+      # Note: 'golint' is deprecated. 'staticcheck' is the modern, powerful successor.
+      # We'll install and run staticcheck.
+      - name: Run Go staticcheck linter
+        run: |
+          go install honnef.co/go/tools/cmd/staticcheck@latest
+          staticcheck ./...
+
+      # Step 5: Run all unit and integration tests.
+      # The '-race' flag is crucial for detecting race conditions in concurrent code.
+      # The '-v' flag provides verbose output.
+      - name: Run Tests
+        run: go test -v -race ./...
+
+      # Step 6: Build the production binaries.
+      # This is a final check to ensure the application compiles correctly for a production environment.
+      # It catches any platform-specific build issues.
+      - name: Build Production Binaries
+        run: |
+          go build -v -o /dev/null ./cmd/api
+          go build -v -o /dev/null ./cmd/worker
